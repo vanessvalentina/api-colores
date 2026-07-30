@@ -28,7 +28,7 @@ const servidor = express();
 
 servidor.use(express.json());
 
-servidor.post("/login", async (peticion,respuesta) => {
+servidor.post("/login", async (peticion,respuesta,siguiente) => {
     let {usuario,password} = peticion.body;
 
     if(!usuario || usuario.trim() == "" || !password || password.trim() == ""){
