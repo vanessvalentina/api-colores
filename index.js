@@ -172,3 +172,5 @@ servidor.use((peticion,respuesta) => {
 });
 
 servidor.listen(process.env.PORT);
+
+export default servidor;
