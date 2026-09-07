@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import cors from "cors";
 import { leerColores,crearColor,actualizarColor,borrarColor,buscarUsuario } from "./db.js";
 
 function autorizar(peticion,respuesta,siguiente){
@@ -25,6 +26,8 @@ function autorizar(peticion,respuesta,siguiente){
 }
 
 const servidor = express();
+
+servidor.use(cors());
 
 servidor.use(express.json());
 
